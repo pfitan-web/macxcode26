@@ -14,7 +14,8 @@ jobs:
       - name: Compiler le dossier .app (Sans Signature)
         run: |
           xcodebuild build \
-            -scheme "FocusFlowrorkmax" \
+            -project "D:\temp\macxcode26\FocusFlowrorkmax\FocusFlow.xcodeproj" \
+            -scheme "FocusFlow" \
             -destination 'generic/platform=iOS' \
             -configuration Debug \
             CODE_SIGNING_ALLOWED=NO \
