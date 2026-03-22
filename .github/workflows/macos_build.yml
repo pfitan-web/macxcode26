@@ -11,18 +11,20 @@ jobs:
       - name: Checkout du projet
         uses: actions/checkout@v4
 
-      - name: Compiler le dossier .app (Sans Signature)
+     - name: Compiler le dossier .app (Sans Signature)
         run: |
           xcodebuild build \
             -project "FocusFlowrorkmax/FocusFlow.xcodeproj" \
             -scheme "FocusFlow" \
+            -sdk iphoneos \
             -destination 'generic/platform=iOS' \
             -configuration Debug \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             ENTITLEMENTS_REQUIRED=NO \
-            AD_HOC_CODE_SIGNING_ALLOWED=YES
-          
+            AD_HOC_CODE_SIGNING_ALLOWED=YES \
+            ONLY_ACTIVE_ARCH=NO
+
           # On déplace le résultat dans un dossier facile à trouver
           mkdir -p build-output
           cp -R build/Build/Products/Debug-iphoneos/*.app build-output/
