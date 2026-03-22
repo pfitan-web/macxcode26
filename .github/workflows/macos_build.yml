@@ -12,11 +12,11 @@ jobs:
       - name: Checkout du projet
         uses: actions/checkout@v4
 
-      - name: Compiler le dossier .app (Sans Signature)
+      - name: Compiler le dossier .app (Sans Signature via Target)
         run: |
           xcodebuild build \
             -project "FocusFlowrorkmax/FocusFlow.xcodeproj" \
-            -scheme "FocusFlow" \
+            -target "FocusFlow" \
             -sdk iphoneos \
             -configuration Debug \
             SYMROOT="${{ github.workspace }}/build" \
