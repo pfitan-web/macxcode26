@@ -110,7 +110,7 @@
 			fileSystemSynchronizedGroups = (
 				105FC57C2E9EAD3100EA8BCF /* FocusFlow */,
 			);
-			name = FocusFlow;
+			name = FocusFlowTests;
 			packageProductDependencies = (
 			);
 			productName = FocusFlow;
@@ -133,10 +133,10 @@
 			fileSystemSynchronizedGroups = (
 				105FC58C2E9EAD3200EA8BCF /* NeuroAssistAppTests */,
 			);
-			name = FocusFlow;
+			name = FocusFlowTests;
 			packageProductDependencies = (
 			);
-			productName = FocusFlow;
+			productName = FocusFlowTests;
 			productReference = 105FC5892E9EAD3200EA8BCF /* FocusFlowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -156,7 +156,7 @@
 			fileSystemSynchronizedGroups = (
 				105FC5962E9EAD3200EA8BCF /* NeuroAssistAppUITests */,
 			);
-			name = FocusFlow;
+			name = FocusFlowTests;
 			packageProductDependencies = (
 			);
 			productName = FocusFlow;
@@ -201,8 +201,8 @@
 			projectRoot = "";
 			targets = (
 				105FC5792E9EAD3100EA8BCF /* FocusFlow */,
-				105FC5882E9EAD3200EA8BCF /* FocusFlow */,
-				105FC5922E9EAD3200EA8BCF /* FocusFlow */,
+				105FC5882E9EAD3200EA8BCF /* FocusFlowTests */,
+				105FC5922E9EAD3200EA8BCF /* FocusFlowUITests */,
 			);
 		};
 /* End PBXProject section */
