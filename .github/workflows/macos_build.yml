@@ -12,11 +12,11 @@ jobs:
       - name: Checkout du projet
         uses: actions/checkout@v4
 
-      - name: Compiler le dossier .app (Sans Signature via Target)
+      - name: Compiler le projet (Toutes les cibles)
         run: |
           xcodebuild build \
             -project "FocusFlowrorkmax/FocusFlow.xcodeproj" \
-            -target "FocusFlow" \
+            -alltargets \
             -sdk iphoneos \
             -configuration Debug \
             SYMROOT="${{ github.workspace }}/build" \
@@ -27,7 +27,9 @@ jobs:
             ONLY_ACTIVE_ARCH=NO
 
       - name: Créer l'archive ZIP
-        run: zip -r MonApp_Sideload.zip build/Debug-iphoneos/*.app
+        run: |
+          cd build/Debug-iphoneos
+          zip -r ../../MonApp_Sideload.zip *.app
 
       - name: Rendre le fichier disponible au téléchargement
         uses: actions/upload-artifact@v4
