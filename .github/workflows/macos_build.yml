@@ -1,0 +1,32 @@
+# 1. Nom de l'automatisation
+name: Mon Premier Pipeline macOS
+
+# 2. Déclencheur (Quand est-ce que ce script s'exécute ?)
+on:
+  push:
+    branches: [ "main" ] # S'active à chaque fois qu'on pousse du code sur 'main'
+  pull_request:
+    branches: [ "main" ] # S'active quand on propose une modification
+
+# 3. La liste des tâches (Jobs)
+jobs:
+  build_sur_mac:
+    # On indique à GitHub d'allouer une machine macOS 
+    runs-on: macos-26-intel
+
+    # 4. Les étapes à exécuter dans la machine
+    steps:
+      # Étape A : On clone le code de notre dépôt sur le Mac virtuel
+      - name: Récupérer le code du projet
+        uses: actions/checkout@v4
+
+      # Étape B : On lance une commande terminal classique pour vérifier l'environnement
+      - name: Vérifier la version du système macOS
+        run: |
+          echo "Vérification du système..."
+          sw_vers
+          uname -m
+
+      # Étape C : Vérification de la version de Node.js pré-installée
+      - name: Vérifier Node.js
+        run: node --version
